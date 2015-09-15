@@ -15,6 +15,18 @@
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
 
+    <input ng-model="name" type="text" placeholder="What is your name?">
+
+    <h1>My name is: {{name}}</h1>
+
+    <select ng-model="pets" class="" name="">
+      <option value="cats">Cats</option>
+      <option value="dogs">Dogs</option>
+      <option value="cats and dogs">Cats and Dogs</option>
+      <option value="neither">Neither</option>
+    </select>
+    <h3>I love {{ pets }}</h3>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
