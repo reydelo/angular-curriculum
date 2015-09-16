@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Contact App</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+
+  <body>
+    <h2>Contacts App</h2>
+<div ng-controller="Contacts">
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="name" ng-model="name">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="email" ng-model="email">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" placeholder="phone" ng-model="phone">
+      <button ng-click="addContact()">Add Contact</button>
+    </div>
+  </form>
+  <input class="form-group" type="text" placeholder="search name" ng-model="searchContacts">
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts | filter: {name: searchContacts}">
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+  </body>
+</html>
