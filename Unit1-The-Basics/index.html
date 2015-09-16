@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="myApp">
 
   <head>
     <meta charset="utf-8">
@@ -39,9 +39,56 @@
     <p>Your total is {{ 17.045467 | currency:"USD$":4 }}</p>
     <p>Your total is {{ 1750.045467 | currency }}</p>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <br><hr>
+
+    <div ng-controller="ForEachController">
+      <ol>
+        <li ng-repeat="name in names">{{ name }}</li>
+      </ol>
+      <ul>
+        <li ng-repeat="symbol in symbols" ng-bind-html="symbol">{{ symbol }}</li>
+      </ul>
+      <ul>
+        <li ng-repeat="n in num track by $index">{{ n }}</li>
+      </ul>
+    </div>
+
+    <div ng-show="3 + 4 == 5">
+      3 + 4 isn't 5, don't show
+    </div>
+
+    <div ng-show="3 + 4 == 7">
+      3 + 4 is 7, do show
+    </div>
+
+    <div ng-hide="3 + 4 == 5">
+        3 + 4 isn't 5, don't hide
+    </div>
+
+    <div ng-hide="3 + 4 == 7">
+      3 + 4 is 7, do hide
+    </div>
+
+    <h3>Sign up page</h3>
+    <input ng-model="password" type="password" placeholder="Enter your password">
+    <p ng-show="password.length > 1">Your password is {{ password.length }} characters</p>
+    <p ng-show="password.length == 1">Your password is {{ password.length }} character</p>
+    <p ng-show="password.length < 6 && password.length > 0">Your password is invalid</p>
+    <button ng-show="password.length >= 6" class="btn btn-warning">Submit</button>
+
     <script type="text/javascript" src="js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
+    <script>
+    var app = angular.module('myApp', ['ngSanitize'])
+    app.controller("ForEachController", function($scope) {
+      $scope.names = ["Harry", "Ron", "Hermoine", "Sirius", "Hedwig", "Tonks"];
+      $scope.symbols = ["&spades;", "&clubs;", "&hearts;", "&diams;"];
+      $scope.num = [1,1,2,5,6,9,9,9];
+    });
+    app.controller("DuplicateController", function($scope) {
+    })
+    </script>
 
   </body>
 </html>
