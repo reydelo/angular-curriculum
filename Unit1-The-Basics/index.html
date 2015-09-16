@@ -15,6 +15,8 @@
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world!</p>
 
+    <br><hr>
+
     <input ng-model="name" type="text" placeholder="What is your name?">
 
     <h1>My name is: {{name}}</h1>
@@ -26,6 +28,16 @@
       <option value="neither">Neither</option>
     </select>
     <h3>I love {{ pets }}</h3>
+
+    <br><hr>
+
+    <p>1 + 2 = {{ 1 + 2 }}</p>
+    <p>My name is {{ "Bojack" + "Horseman" }}</p>
+    <p>The array [99, 43, 22] is {{ [99, 43, 22].length}} items long</p>
+
+    <h3>Currency Filter</h3>
+    <p>Your total is {{ 17.045467 | currency:"USD$":4 }}</p>
+    <p>Your total is {{ 1750.045467 | currency }}</p>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
