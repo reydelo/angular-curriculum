@@ -7,31 +7,35 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="./css/main.css" rel="stylesheet" media="screen">
 </head>
-  <body>
-    <div class="container">
-      <div>
-        <h1>Say something</h1>
-        <br>
-        <input type="text" ng-model="greeting" ng-init="greeting='Hello'"></p>
-        <p>{{ greeting }}</p>
-      <!-- add content here -->
-      </div>
+<body ng-controller="MainController">
+    <div class="navbar navbar-header navbar-inverse">
+      <a class="navbar-brand" ng-class="{active: active('/')}" href="#/">Homes</a>
+      <a class="navbar-brand" ng-class="{active: active('/dogs')}" href="#/dogs">Dogs</a>
+      <a class="navbar-brand" ng-class="{active: active('/projects')}" href="#/projects">Projects</a>
     </div>
+    <br><hr>
+  <div class="container">
+      <h1>Say something</h1>
+      <br>
+      <input type="text" ng-model="greeting" ng-init="greeting='Hello'"></p>
+      <p>{{ greeting }}</p>
+      <br><hr>
+  <div ng-view>
 
-    <div ng-view>
+  </div>
+  </div>
 
-    </div>
-    <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
 
-    </script>
-    <script src="./js/app.js" type="text/javascript"></script>
-    <script src="./js/controllers.js" type="text/javascript"></script>
-    <script src="./js/directives.js" type="text/javascript"></script>
-    <script src="./js/filters.js" type="text/javascript"></script>
-    <script src="./js/services.js" type="text/javascript"></script>
-  </body>
+</script>
+<script src="./js/app.js" type="text/javascript"></script>
+<script src="./js/controllers.js" type="text/javascript"></script>
+<script src="./js/directives.js" type="text/javascript"></script>
+<script src="./js/filters.js" type="text/javascript"></script>
+<script src="./js/services.js" type="text/javascript"></script>
+</body>
 </html>

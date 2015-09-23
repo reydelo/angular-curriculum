@@ -10,5 +10,9 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/dogs.html',
         controller: 'DogsController'
       })
+      .when('/projects', {
+        templateUrl: 'partials/projects.html',
+        controller: 'ProjectsController'
+      })
       .otherwise({redirectTo: '/'});
 });
