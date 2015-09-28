@@ -18,8 +18,17 @@
       <h1>Say something</h1>
       <br>
       <input type="text" ng-model="greeting" ng-init="greeting='Hello'"></p>
-      <p>{{ greeting }}</p>
+      <p>{{ greeting | pigLatin }}</p>
+      <p>{{ "hello-world" | kebab }}</p>
+      <p>{{ "hello_world" | kebab }}</p>
+      <p>{{ 123 | kebab }}</p>
+      <p>{{ "hello-world" | camel }}</p>
+      <p>{{ "hello_world" | camel }}</p>
+      <p>{{ 123 | camel }}</p>
       <br><hr>
+      <input type="text" ng-model="redactPhrase" placeholder="Enter a phrase">
+      <input type="text" ng-model="redactWord" placeholder="Pick a word">
+      <p>{{ redactPhrase | redact : redactWord }}</p>
   <div ng-view>
 
   </div>
